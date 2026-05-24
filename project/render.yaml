@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: load-balancer-backend
+    env: python
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker wsgi:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: "https://<tu-frontend>.vercel.app"
+        # For multiple origins, separate by commas when editing in Render UI

@@ -1,0 +1,10 @@
+{
+  "algorithm": "ia",
+  "automatic_mode": true,
+  "update_frequency_sec": 4,
+  "notifications_enabled": true,
+  "warning_threshold": 65,
+  "critical_threshold": 85,
+  "retention_days": 30,
+  "api_endpoint": "https://api.balanceo-ia.edu/v1"
+}
